@@ -176,7 +176,6 @@ func (ac *ALBController) GetServiceNodePort(serviceKey string, backendPort int32
 	// Verify the service type is Node port.
 	if item.(*api.Service).Spec.Type != api.ServiceTypeNodePort {
 		return nil, fmt.Errorf("%v service is not of type NodePort", serviceKey)
-
 	}
 
 	// Find associated target port to ensure correct NodePort is assigned.
