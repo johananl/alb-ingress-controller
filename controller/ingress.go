@@ -59,7 +59,7 @@ func NewALBIngressFromIngress(ingress *extensions.Ingress, ac *ALBController) (*
 	// Find the previous version of this ingress (if it existed) and copy its Current state.
 	if i := ac.ALBIngresses.find(newIngress); i >= 0 {
 		// Acquire a lock to prevent race condition if existing ingress's state is currently being synced
-		// with Amazon..
+		// with Amazon.
 		*newIngress = *ac.ALBIngresses[i]
 		newIngress.lock.Lock()
 		defer newIngress.lock.Unlock()
