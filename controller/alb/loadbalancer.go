@@ -118,7 +118,6 @@ func (lb *LoadBalancer) Reconcile() error {
 }
 
 // create requests a new ELBV2 (ALB) is created in AWS.
-
 func (lb *LoadBalancer) create() error {
 	in := elbv2.CreateLoadBalancerInput{
 		Name:           lb.DesiredLoadBalancer.LoadBalancerName,
