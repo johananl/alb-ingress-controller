@@ -135,7 +135,7 @@ func NewALBIngressFromIngress(ingress *extensions.Ingress, ac *ALBController) (*
 			for _, listener := range listenerList {
 				// If this listener matches an existing listener, pull it out so we can work on it.
 				// TODO: We should refine the lookup. Find is really not adequate as this could be a first
-				// statrt where no Listeners have CurrentListeners attached. In other words, find should be
+				// start where no Listeners have CurrentListeners attached. In other words, find should be
 				// rewritten.
 				if i := lb.Listeners.Find(listener.DesiredListener); i >= 0 {
 					// Save the Desired state to our old Listener.
