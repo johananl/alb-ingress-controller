@@ -150,7 +150,7 @@ func (ac *ALBController) Check(_ *http.Request) error {
 	return nil
 }
 
-// DefaultIngressClass returns thed default ingress class
+// DefaultIngressClass returns the default ingress class
 func (ac *ALBController) DefaultIngressClass() string {
 	return "alb"
 }
